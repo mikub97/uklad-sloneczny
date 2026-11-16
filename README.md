@@ -25,6 +25,8 @@ od najważniejszych do najmniej ważnych.
 | `planety.html` | podstrona: części 3–5, tabela na trzy sposoby, wykres, wniosek |
 | `sciaga.html` | ściąga: wprowadzenie do HTML/CSS plus znaczniki i właściwości od najważniejszych |
 | `jak-to-zrobione.html` | mapa wymagań projektu i typowe błędy |
+| `program.html` | program zajęć: wymagania, zakres spotkań, zasady oceniania |
+| `program-zajec.md` | ten sam dokument w oryginale, do pobrania |
 | `style.css` | wygląd całej strony, komentowany po polsku |
 | `imgs/` | 3 grafiki własne + 2 zdjęcia NASA (domena publiczna) |
 | `arkusz/uklad-sloneczny.xlsx` | arkusz z danymi, formułami i wykresem |
