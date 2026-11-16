@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ściąga HTML i CSS - Układ Słoneczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="strona">
+
+    <div class="menu">
+        <a href="index.html">Strona główna</a>
+        <a href="planety.html">Planety</a>
+        <a href="sciaga.html">Ściąga HTML i CSS</a>
+        <a href="jak-to-zrobione.html">Jak to zrobiono?</a>
+        <a href="https://github.com/mikub97/uklad-sloneczny">Kod tej strony (GitHub)</a>
+    </div>
+
+    <h1>Ściąga: HTML i CSS</h1>
+    <p>
+        Wszystko, czego potrzebujesz do swojego projektu, w jednym miejscu.
+        Znaczniki i właściwości są ustawione <strong>od najważniejszych do najmniej ważnych</strong>:
+        zacznij od pierwszej tabeli w każdej sekcji, a resztę dokładaj, gdy będziesz chciał
+        coś konkretnego poprawić.
+    </p>
+
+    <!-- ============ WPROWADZENIE ============ -->
+    <h2>Zanim zaczniesz: jak to w ogóle działa?</h2>
+
+    <h3>HTML to treść, CSS to wygląd</h3>
+    <p>
+        <strong>HTML</strong> mówi, <em>co</em> jest na stronie: że tu jest nagłówek,
+        tu akapit, a tu obrazek. <strong>CSS</strong> mówi, <em>jak</em> to ma wyglądać:
+        że nagłówek jest żółty, a tło granatowe.
+    </p>
+    <p>
+        Porównanie: HTML to szkielet i mięśnie, CSS to ubranie. Strona bez CSS-a
+        nadal działa - jest tylko czarno-biała i brzydka. Strona bez HTML-a nie istnieje.
+    </p>
+
+    <h3>Jak przeglądarka czyta Twoją stronę?</h3>
+    <p>
+        Plik <span class="kod">.html</span> to zwykły tekst. Przeglądarka czyta go od góry
+        do dołu i wszystko, co jest w <strong>ostrych nawiasach</strong>, traktuje jako
+        polecenie, a nie jako tekst do wyświetlenia. Dlatego
+        <span class="kod">&lt;h1&gt;Cześć&lt;/h1&gt;</span> wyświetli się jako duży napis
+        <strong>Cześć</strong>, a nie jako „h1 Cześć h1”.
+    </p>
+
+    <h3>Jak zacząć w Notatniku</h3>
+    <ol>
+        <li>Otwórz Notatnik i wpisz szkielet strony (jest niżej).</li>
+        <li>Wybierz <em>Plik &rarr; Zapisz jako</em>.</li>
+        <li>W polu <em>Zapisz jako typ</em> ustaw <strong>Wszystkie pliki</strong>.</li>
+        <li>W polu <em>Kodowanie</em> wybierz <strong>UTF-8</strong> - bez tego polskie znaki się posypią.</li>
+        <li>Nazwij plik <span class="kod">index.html</span> (z kropką i rozszerzeniem!).</li>
+        <li>Kliknij plik dwa razy - otworzy się w przeglądarce.</li>
+    </ol>
+    <p>
+        Potem pracujesz tak: poprawiasz kod w Notatniku, zapisujesz (<strong>Ctrl + S</strong>),
+        przechodzisz do przeglądarki i odświeżasz (<strong>F5</strong>). I tak w kółko.
+    </p>
+
+    <h3>Szkielet strony - od tego zaczyna się każdy plik</h3>
+    <pre class="kod-blok">&lt;!DOCTYPE html&gt;
+&lt;html lang="pl"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Tytuł na karcie przeglądarki&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Nagłówek widoczny na stronie&lt;/h1&gt;
+    &lt;p&gt;Pierwszy akapit tekstu.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    <p>
+        <strong>Przepisz ten szkielet ręcznie</strong>, nie kopiuj. Przepisywanie jest
+        najszybszym sposobem, żeby go zapamiętać - a na egzaminie trzeba będzie umieć
+        wprowadzać zmiany samodzielnie.
+    </p>
+
+    <h3>Z czego składa się znacznik?</h3>
+    <pre class="kod-blok">&lt;a href="borsuk.html"&gt;Kliknij tutaj&lt;/a&gt;
+ ^   ^                 ^              ^
+ |   |                 |              znacznik zamykający
+ |   |                 treść
+ |   atrybut (dodatkowa informacja)
+ nazwa znacznika</pre>
+    <ul>
+        <li><strong>Znacznik otwierający</strong>: <span class="kod">&lt;p&gt;</span></li>
+        <li><strong>Znacznik zamykający</strong>: <span class="kod">&lt;/p&gt;</span> - z ukośnikiem</li>
+        <li><strong>Atrybut</strong>: dodatkowa informacja w środku znacznika otwierającego,
+            zawsze w formie <span class="kod">nazwa="wartość"</span></li>
+        <li><strong>Znaczniki puste</strong> nie mają zamknięcia, bo nie mają treści:
+            <span class="kod">&lt;img&gt;</span>, <span class="kod">&lt;br&gt;</span>,
+            <span class="kod">&lt;hr&gt;</span>, <span class="kod">&lt;meta&gt;</span></li>
+    </ul>
+    <p>
+        Znaczniki trzeba zamykać <strong>w odwrotnej kolejności</strong> niż się je otwierało:
+        <span class="kod">&lt;p&gt;&lt;strong&gt;tekst&lt;/strong&gt;&lt;/p&gt;</span> - dobrze,
+        <span class="kod">&lt;p&gt;&lt;strong&gt;tekst&lt;/p&gt;&lt;/strong&gt;</span> - źle.
+    </p>
+
+    <!-- ============ ZNACZNIKI HTML ============ -->
+    <h2>Znaczniki HTML</h2>
+
+    <h3>Poziom 1: bez tych nie zrobisz strony</h3>
+    <table class="sciaga">
+        <tr><th>Znacznik</th><th>Co robi</th><th>Przykład</th></tr>
+        <tr>
+            <td><span class="kod">&lt;html&gt;</span></td>
+            <td>Opakowuje całą stronę. Atrybut <span class="kod">lang="pl"</span> mówi, że strona jest po polsku.</td>
+            <td><span class="kod">&lt;html lang="pl"&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;head&gt;</span></td>
+            <td>Informacje <em>o</em> stronie, których nie widać w oknie: tytuł, kodowanie, podpięcie CSS-a.</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;body&gt;</span></td>
+            <td>Wszystko, co widać na stronie. Tu wpisujesz całą treść.</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;meta charset&gt;</span></td>
+            <td>Ustawia kodowanie znaków. <strong>Bez tego polskie litery zamienią się w krzaczki.</strong></td>
+            <td><span class="kod">&lt;meta charset="UTF-8"&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;title&gt;</span></td>
+            <td>Tytuł na karcie przeglądarki (nie na stronie!).</td>
+            <td><span class="kod">&lt;title&gt;Moja strona&lt;/title&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;link&gt;</span></td>
+            <td>Podpina plik CSS do strony. Wstawiasz go w <span class="kod">&lt;head&gt;</span>.</td>
+            <td><span class="kod">&lt;link rel="stylesheet" href="style.css"&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;h1&gt;</span> ... <span class="kod">&lt;h6&gt;</span></td>
+            <td>Nagłówki. <span class="kod">h1</span> jest największy i powinien być jeden na stronie, <span class="kod">h2</span> to tytuły części.</td>
+            <td><span class="kod">&lt;h2&gt;Słońce&lt;/h2&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;p&gt;</span></td>
+            <td>Akapit tekstu. Najczęściej używany znacznik na świecie.</td>
+            <td><span class="kod">&lt;p&gt;Jakiś tekst.&lt;/p&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;a&gt;</span></td>
+            <td>Odnośnik (link). W <span class="kod">href</span> wpisujesz, dokąd prowadzi: do innego pliku albo pod adres w internecie.</td>
+            <td><span class="kod">&lt;a href="planety.html"&gt;Planety&lt;/a&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;img&gt;</span></td>
+            <td>Obrazek. <span class="kod">src</span> to ścieżka do pliku, <span class="kod">alt</span> to opis dla kogoś, kto obrazka nie widzi.</td>
+            <td><span class="kod">&lt;img src="imgs/mars.jpg" alt="Mars"&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;ul&gt;</span> i <span class="kod">&lt;li&gt;</span></td>
+            <td>Lista wypunktowana. <span class="kod">ul</span> to cała lista, każde <span class="kod">li</span> to jeden punkt.</td>
+            <td><span class="kod">&lt;ul&gt;&lt;li&gt;Mars&lt;/li&gt;&lt;/ul&gt;</span></td>
+        </tr>
+    </table>
+
+    <h3>Poziom 2: bardzo przydatne</h3>
+    <table class="sciaga">
+        <tr><th>Znacznik</th><th>Co robi</th><th>Przykład</th></tr>
+        <tr>
+            <td><span class="kod">&lt;table&gt;</span>, <span class="kod">&lt;tr&gt;</span>, <span class="kod">&lt;th&gt;</span>, <span class="kod">&lt;td&gt;</span></td>
+            <td>Tabela. <span class="kod">tr</span> to wiersz, <span class="kod">th</span> to komórka nagłówka (pogrubiona), <span class="kod">td</span> to zwykła komórka.</td>
+            <td><span class="kod">&lt;tr&gt;&lt;td&gt;Mars&lt;/td&gt;&lt;/tr&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;div&gt;</span></td>
+            <td>Pudełko bez własnego wyglądu. Grupuje elementy, żeby nadać im wspólny styl przez <span class="kod">class</span>.</td>
+            <td><span class="kod">&lt;div class="menu"&gt; ... &lt;/div&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;ol&gt;</span></td>
+            <td>Lista numerowana - działa jak <span class="kod">ul</span>, ale punkty dostają numery 1, 2, 3.</td>
+            <td><span class="kod">&lt;ol&gt;&lt;li&gt;Pierwszy&lt;/li&gt;&lt;/ol&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;strong&gt;</span></td>
+            <td>Pogrubienie - oznacza coś ważnego.</td>
+            <td><span class="kod">&lt;strong&gt;uwaga&lt;/strong&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;em&gt;</span></td>
+            <td>Kursywa - lekkie wyróżnienie.</td>
+            <td><span class="kod">&lt;em&gt;Olympus Mons&lt;/em&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;br&gt;</span></td>
+            <td>Złamanie linii. Nowy akapit rób przez <span class="kod">&lt;p&gt;</span>, a nie przez trzy <span class="kod">&lt;br&gt;</span>.</td>
+            <td><span class="kod">pierwsza&lt;br&gt;druga</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;hr&gt;</span></td>
+            <td>Pozioma kreska oddzielająca części strony.</td>
+            <td><span class="kod">&lt;hr&gt;</span></td>
+        </tr>
+        <tr>
+            <td>atrybut <span class="kod">class</span></td>
+            <td>Nadaje elementowi nazwę, po której CSS go rozpozna. Można tę samą klasę dać wielu elementom.</td>
+            <td><span class="kod">&lt;p class="podpis"&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;!-- --&gt;</span></td>
+            <td>Komentarz. Przeglądarka go nie pokazuje - służy do notatek w kodzie.</td>
+            <td><span class="kod">&lt;!-- tu będzie menu --&gt;</span></td>
+        </tr>
+    </table>
+
+    <h3>Poziom 3: dobrze wiedzieć, że istnieją</h3>
+    <table class="sciaga">
+        <tr><th>Znacznik</th><th>Co robi</th><th>Przykład</th></tr>
+        <tr>
+            <td><span class="kod">&lt;span&gt;</span></td>
+            <td>To samo co <span class="kod">div</span>, ale dla kawałka tekstu w środku zdania.</td>
+            <td><span class="kod">&lt;span class="kod"&gt;tekst&lt;/span&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;small&gt;</span></td>
+            <td>Mniejszy tekst - dobry na podpisy i drobne uwagi.</td>
+            <td><span class="kod">&lt;small&gt;źródło&lt;/small&gt;</span></td>
+        </tr>
+        <tr>
+            <td>atrybut <span class="kod">download</span></td>
+            <td>Sprawia, że plik z odnośnika się pobiera, zamiast otwierać.</td>
+            <td><span class="kod">&lt;a href="dane.xlsx" download&gt;</span></td>
+        </tr>
+        <tr>
+            <td>atrybut <span class="kod">target</span></td>
+            <td><span class="kod">target="_blank"</span> otwiera odnośnik w nowej karcie.</td>
+            <td><span class="kod">&lt;a href="..." target="_blank"&gt;</span></td>
+        </tr>
+        <tr>
+            <td>atrybut <span class="kod">width</span></td>
+            <td>Szerokość obrazka w pikselach. Wysokość dopasuje się sama.</td>
+            <td><span class="kod">&lt;img src="..." width="400"&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;iframe&gt;</span></td>
+            <td>Okienko, w którym wyświetla się inny plik - np. tabela wyeksportowana z arkusza.</td>
+            <td><span class="kod">&lt;iframe src="tabela.html"&gt;&lt;/iframe&gt;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">&lt;pre&gt;</span> i <span class="kod">&lt;code&gt;</span></td>
+            <td>Pokazują kod. <span class="kod">pre</span> zachowuje spacje i złamania linii, <span class="kod">code</span> oznacza kod w zdaniu.</td>
+            <td><span class="kod">&lt;pre&gt;kod&lt;/pre&gt;</span></td>
+        </tr>
+    </table>
+
+    <!-- ============ CSS ============ -->
+    <h2>CSS - wygląd strony</h2>
+
+    <h3>Jak podłączyć CSS?</h3>
+    <p>
+        Tworzysz drugi plik, np. <span class="kod">style.css</span>, w tym samym folderze
+        co strona, i w sekcji <span class="kod">&lt;head&gt;</span> dopisujesz jedną linijkę:
+    </p>
+    <pre class="kod-blok">&lt;link rel="stylesheet" href="style.css"&gt;</pre>
+    <p>
+        Od tej chwili każda reguła z pliku CSS działa na stronie. Jeden plik CSS może
+        obsługiwać wszystkie podstrony naraz - dlatego warto go mieć osobno, zamiast
+        wpisywać style w każdym znaczniku z osobna.
+    </p>
+
+    <h3>Z czego składa się reguła CSS?</h3>
+    <pre class="kod-blok">h1 {
+    color: #ffd34d;
+    font-size: 34px;
+}
+^   ^      ^
+|   |      wartość
+|   właściwość (co zmieniamy)
+selektor (na co to działa)</pre>
+    <p>
+        Po każdej wartości stawiamy <strong>średnik</strong>, a całość zamykamy
+        w <strong>klamrach</strong>. Brak średnika to najczęstszy błąd w CSS-ie -
+        reguła po prostu przestaje działać.
+    </p>
+
+    <h3>Selektory, czyli „na co to działa”</h3>
+    <table class="sciaga">
+        <tr><th>Selektor</th><th>Na co działa</th><th>Przykład</th></tr>
+        <tr>
+            <td><span class="kod">p</span></td>
+            <td>Na <strong>wszystkie</strong> akapity na stronie.</td>
+            <td><span class="kod">p { color: white; }</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">.menu</span></td>
+            <td>Na elementy, które mają <span class="kod">class="menu"</span>. Kropka oznacza klasę.</td>
+            <td><span class="kod">.menu { padding: 10px; }</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">.menu a</span></td>
+            <td>Na odnośniki, ale tylko te <strong>w środku</strong> elementu z klasą <span class="kod">menu</span>.</td>
+            <td><span class="kod">.menu a { color: white; }</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">th, td</span></td>
+            <td>Przecinek znaczy „oraz” - ta sama reguła dla dwóch rodzajów elementów.</td>
+            <td><span class="kod">th, td { padding: 7px; }</span></td>
+        </tr>
+    </table>
+
+    <h3>Poziom 1: właściwości, od których zaczynasz</h3>
+    <table class="sciaga">
+        <tr><th>Właściwość</th><th>Co robi</th><th>Przykład</th></tr>
+        <tr>
+            <td><span class="kod">color</span></td>
+            <td>Kolor tekstu.</td>
+            <td><span class="kod">color: white;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">background-color</span></td>
+            <td>Kolor tła elementu.</td>
+            <td><span class="kod">background-color: #0b1026;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">font-family</span></td>
+            <td>Krój pisma. Podaje się kilka na wypadek, gdyby pierwszego nie było na komputerze.</td>
+            <td><span class="kod">font-family: Arial, sans-serif;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">font-size</span></td>
+            <td>Wielkość liter.</td>
+            <td><span class="kod">font-size: 17px;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">text-align</span></td>
+            <td>Wyrównanie tekstu: <span class="kod">left</span>, <span class="kod">center</span>, <span class="kod">right</span>.</td>
+            <td><span class="kod">text-align: center;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">padding</span></td>
+            <td>Odstęp <strong>wewnątrz</strong> elementu, między jego brzegiem a treścią.</td>
+            <td><span class="kod">padding: 14px;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">margin</span></td>
+            <td>Odstęp <strong>na zewnątrz</strong>, między tym elementem a sąsiednimi.</td>
+            <td><span class="kod">margin: 10px;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">border</span></td>
+            <td>Obramowanie: grubość, rodzaj linii, kolor.</td>
+            <td><span class="kod">border: 1px solid black;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">width</span></td>
+            <td>Szerokość elementu - w pikselach albo w procentach.</td>
+            <td><span class="kod">width: 100%;</span></td>
+        </tr>
+    </table>
+    <p>
+        <strong>padding czy margin?</strong> Wyobraź sobie zdjęcie w ramce.
+        <span class="kod">padding</span> to biały passe-partout w środku ramki,
+        a <span class="kod">margin</span> to odstęp między ramką a sąsiednim obrazem na ścianie.
+    </p>
+
+    <h3>Poziom 2: gdy strona ma wyglądać ładniej</h3>
+    <table class="sciaga">
+        <tr><th>Właściwość</th><th>Co robi</th><th>Przykład</th></tr>
+        <tr>
+            <td><span class="kod">max-width</span></td>
+            <td>Największa dozwolona szerokość. Na obrazku <span class="kod">max-width: 100%</span> pilnuje, żeby nie wystawał poza stronę na telefonie.</td>
+            <td><span class="kod">max-width: 900px;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">margin: 0 auto;</span></td>
+            <td>Wyśrodkowuje całe pudełko na stronie. Działa tylko razem z ustawioną szerokością.</td>
+            <td><span class="kod">margin: 0 auto;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">line-height</span></td>
+            <td>Odstęp między wierszami tekstu. Wartość <span class="kod">1.6</span> bardzo poprawia czytelność.</td>
+            <td><span class="kod">line-height: 1.6;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">border-radius</span></td>
+            <td>Zaokrągla rogi.</td>
+            <td><span class="kod">border-radius: 10px;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">text-decoration</span></td>
+            <td><span class="kod">none</span> zdejmuje podkreślenie z odnośników - przydaje się w menu.</td>
+            <td><span class="kod">text-decoration: none;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">border-collapse</span></td>
+            <td>W tabeli skleja podwójne kreski w jedną. Prawie zawsze chcesz <span class="kod">collapse</span>.</td>
+            <td><span class="kod">border-collapse: collapse;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">font-weight</span></td>
+            <td>Grubość liter: <span class="kod">bold</span> albo <span class="kod">normal</span>.</td>
+            <td><span class="kod">font-weight: bold;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">font-style</span></td>
+            <td>Pochylenie: <span class="kod">italic</span> albo <span class="kod">normal</span>.</td>
+            <td><span class="kod">font-style: italic;</span></td>
+        </tr>
+    </table>
+
+    <h3>Poziom 3: dla chętnych</h3>
+    <table class="sciaga">
+        <tr><th>Właściwość</th><th>Co robi</th><th>Przykład</th></tr>
+        <tr>
+            <td><span class="kod">display: inline-block;</span></td>
+            <td>Ustawia elementy obok siebie zamiast jeden pod drugim - tak zrobione jest menu na tej stronie.</td>
+            <td><span class="kod">display: inline-block;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">list-style</span></td>
+            <td>Zmienia albo usuwa kropki przy liście.</td>
+            <td><span class="kod">list-style: none;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">letter-spacing</span></td>
+            <td>Odstęp między literami - dobry w dużych nagłówkach.</td>
+            <td><span class="kod">letter-spacing: 2px;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">opacity</span></td>
+            <td>Przezroczystość: od <span class="kod">0</span> (niewidoczny) do <span class="kod">1</span> (normalny).</td>
+            <td><span class="kod">opacity: 0.8;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">background-image</span></td>
+            <td>Obrazek jako tło elementu.</td>
+            <td><span class="kod">background-image: url("tlo.jpg");</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">overflow-x: auto;</span></td>
+            <td>Gdy treść jest za szeroka, dokłada pasek przewijania zamiast rozpychać stronę.</td>
+            <td><span class="kod">overflow-x: auto;</span></td>
+        </tr>
+    </table>
+
+    <!-- ============ KOLORY I JEDNOSTKI ============ -->
+    <h2>Kolory i jednostki</h2>
+
+    <h3>Trzy sposoby zapisania koloru</h3>
+    <table class="sciaga">
+        <tr><th>Zapis</th><th>Jak działa</th><th>Przykład</th></tr>
+        <tr>
+            <td>nazwa</td>
+            <td>Około 140 gotowych nazw po angielsku. Najprostsze, ale mało dokładne.</td>
+            <td><span class="kod">color: red;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">#RRGGBB</span></td>
+            <td>Po dwa znaki na czerwony, zielony i niebieski, od <span class="kod">00</span> do <span class="kod">ff</span>. Tak zapisuje kolory większość programów graficznych.</td>
+            <td><span class="kod">color: #ffd34d;</span></td>
+        </tr>
+        <tr>
+            <td><span class="kod">rgb()</span></td>
+            <td>To samo, ale liczbami od 0 do 255.</td>
+            <td><span class="kod">color: rgb(255, 211, 77);</span></td>
+        </tr>
+    </table>
+    <p>
+        Kolory najłatwiej dobrać w dowolnym internetowym „color pickerze” albo w programie
+        graficznym - podają gotowy zapis z kratką do wklejenia.
+    </p>
+
+    <h3>Jednostki</h3>
+    <table class="sciaga">
+        <tr><th>Jednostka</th><th>Co oznacza</th><th>Kiedy używać</th></tr>
+        <tr>
+            <td><span class="kod">px</span></td>
+            <td>Piksel, czyli jedna kropka ekranu.</td>
+            <td>Wielkość liter, odstępy, obramowania.</td>
+        </tr>
+        <tr>
+            <td><span class="kod">%</span></td>
+            <td>Procent szerokości elementu, w którym coś się znajduje.</td>
+            <td>Szerokość tabel i obrazków - dopasowuje się do ekranu.</td>
+        </tr>
+        <tr>
+            <td>bez jednostki</td>
+            <td>Mnożnik.</td>
+            <td>Tylko przy <span class="kod">line-height</span>, np. <span class="kod">1.6</span>.</td>
+        </tr>
+    </table>
+
+    <!-- ============ KOLEJNOSC PRAC ============ -->
+    <h2>W jakiej kolejności to robić?</h2>
+    <ol>
+        <li>Wypisz na kartce, jakie części ma mieć Twoja strona.</li>
+        <li>Zrób szkielet <span class="kod">index.html</span> i wpisz samą treść: nagłówki, akapity, listy. Na razie bez CSS-a - ma być brzydko, ale kompletnie.</li>
+        <li>Dodaj obrazki i odnośniki. Sprawdź w przeglądarce, czy wszystkie działają.</li>
+        <li>Zrób podstronę i menu. Upewnij się, że z podstrony da się wrócić.</li>
+        <li>Dopiero teraz podepnij <span class="kod">style.css</span> i zajmij się wyglądem.</li>
+        <li>Na końcu: tabela z arkusza, wykres i sekcja „Źródła”.</li>
+    </ol>
+    <p>
+        Taka kolejność oszczędza mnóstwo czasu: najpierw treść, potem wygląd.
+        Odwrotnie prawie zawsze kończy się poprawianiem tego samego dwa razy.
+    </p>
+
+    <div class="ramka">
+        <p>
+            Lista typowych błędów (krzywe cudzysłowy, zapomniany znacznik zamykający,
+            zła nazwa pliku) jest na podstronie
+            <a href="jak-to-zrobione.html">Jak to zrobiono?</a>, razem z mapą wymagań projektu.
+        </p>
+    </div>
+
+    <div class="stopka">
+        <p>
+            <a href="index.html">&larr; Wróć na stronę główną</a> &middot;
+            <a href="https://github.com/mikub97/uklad-sloneczny">Zobacz kod źródłowy tej strony</a>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

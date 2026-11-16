@@ -13,7 +13,9 @@ nagłówki, akapity, lista, pięć grafik (w tym trzy własne), odnośniki do ź
 filmu, sekcja „Źródła”, tabela z obliczeniami i wykres z arkusza kalkulacyjnego.
 
 Podstrona [jak-to-zrobione.html](jak-to-zrobione.html) wypisuje każde wymaganie i wskazuje,
-gdzie dokładnie zostało spełnione.
+gdzie dokładnie zostało spełnione, a [sciaga.html](sciaga.html) to materiał do nauki:
+wprowadzenie do HTML-a i CSS-a oraz spis znaczników i właściwości uporządkowany
+od najważniejszych do najmniej ważnych.
 
 ## Pliki
 
@@ -21,7 +23,8 @@ gdzie dokładnie zostało spełnione.
 |---|---|
 | `index.html` | strona główna: część startowa, części tematyczne 1–2, źródła |
 | `planety.html` | podstrona: części 3–5, tabela na trzy sposoby, wykres, wniosek |
-| `jak-to-zrobione.html` | ściąga dla uczniów: lista wymagań i typowe błędy |
+| `sciaga.html` | ściąga: wprowadzenie do HTML/CSS plus znaczniki i właściwości od najważniejszych |
+| `jak-to-zrobione.html` | mapa wymagań projektu i typowe błędy |
 | `style.css` | wygląd całej strony, komentowany po polsku |
 | `imgs/` | 3 grafiki własne + 2 zdjęcia NASA (domena publiczna) |
 | `arkusz/uklad-sloneczny.xlsx` | arkusz z danymi, formułami i wykresem |

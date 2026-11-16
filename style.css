@@ -142,3 +142,38 @@ th {
     border: 0;
     border-top: 1px solid #2a3566;
 }
+
+/* ===================================================================
+   DODATEK: wyglad fragmentow kodu (uzywany na podstronie ze sciaga)
+   =================================================================== */
+
+/* kod w srodku zdania, np. znacznik <p> */
+.kod {
+    background-color: #0b1026;
+    color: #9fd8ff;
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 2px 6px;
+}
+
+/* wiekszy fragment kodu - caly blok.
+   overflow-x sprawia, ze przy dlugiej linijce pojawia sie
+   pasek przewijania zamiast rozpychania calej strony. */
+.kod-blok {
+    background-color: #0b1026;
+    color: #cfe6ff;
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    border: 1px solid #2a3566;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 10px 0;
+    overflow-x: auto;
+}
+
+/* tabele ze sciaga maja duzo tekstu - niech beda troche luzniejsze */
+.sciaga td {
+    line-height: 1.5;
+}
