@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Planety - Układ Słoneczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="strona">
+
+    <!-- ============ MENU (takie samo jak na stronie głównej) ============ -->
+    <div class="menu">
+        <a href="index.html">Strona główna</a>
+        <a href="planety.html">Planety</a>
+        <a href="jak-to-zrobione.html">Jak to zrobiono?</a>
+        <a href="https://github.com/mikub97/uklad-sloneczny">Kod tej strony (GitHub)</a>
+    </div>
+
+    <h1>Planety Układu Słonecznego</h1>
+    <p>
+        To jest <strong>podstrona</strong> - osobny plik <em>planety.html</em>, do którego
+        wchodzi się z menu. Z każdej podstrony musi dać się wrócić na stronę główną,
+        dlatego menu jest także tutaj.
+    </p>
+
+    <!-- ============ CZĘŚĆ TEMATYCZNA 3 ============ -->
+    <h2>3. Planety skaliste</h2>
+    <p>
+        Cztery planety najbliżej Słońca - Merkury, Wenus, Ziemia i Mars - są zbudowane
+        ze skał i metali. Mają twardą powierzchnię, po której dałoby się chodzić,
+        i są znacznie mniejsze od olbrzymów.
+    </p>
+    <ul>
+        <li><strong>Merkury</strong> - najmniejsza planeta, bez atmosfery. W dzień ponad 400 stopni, w nocy minus 170.</li>
+        <li><strong>Wenus</strong> - najgorętsza planeta (około 460 stopni), bo gęsta atmosfera zatrzymuje ciepło.</li>
+        <li><strong>Ziemia</strong> - jedyna znana planeta z życiem i z wodą w stanie ciekłym na powierzchni.</li>
+        <li><strong>Mars</strong> - „czerwona planeta”, ma najwyższą górę w Układzie Słonecznym (Olympus Mons, 22 km).</li>
+    </ul>
+
+    <!-- WYMAGANIE: grafika własna -->
+    <img src="imgs/porownanie-planet.png" alt="Porównanie wielkości ośmiu planet narysowanych w tej samej skali" class="grafika">
+    <p class="podpis">
+        Grafika 3. Porównanie rozmiarów planet w tej samej skali. <strong>Grafika własna</strong>.
+        Dobrze widać, że planety skaliste są maleńkie przy olbrzymach.
+    </p>
+
+    <!-- ============ CZĘŚĆ TEMATYCZNA 4 ============ -->
+    <h2>4. Olbrzymy: gazowe i lodowe</h2>
+    <p>
+        Cztery dalsze planety są ogromne i nie mają stałej powierzchni. Jowisz i Saturn
+        nazywamy <strong>gazowymi olbrzymami</strong>, bo składają się głównie z wodoru i helu.
+        Uran i Neptun mają w środku więcej lodu i wody, dlatego mówi się o nich
+        <strong>lodowe olbrzymy</strong>.
+    </p>
+    <ul>
+        <li><strong>Jowisz</strong> - największa planeta. Jego Wielka Czerwona Plama to burza większa od Ziemi.</li>
+        <li><strong>Saturn</strong> - ma najbardziej okazałe pierścienie, zbudowane z kawałków lodu i skał.</li>
+        <li><strong>Uran</strong> - obraca się „na boku”, jakby się przewrócił.</li>
+        <li><strong>Neptun</strong> - wieją na nim najszybsze wiatry w Układzie Słonecznym, ponad 2000 km/h.</li>
+    </ul>
+
+    <!-- WYMAGANIE: zdjęcie z internetu (domena publiczna) -->
+    <img src="imgs/jowisz-nasa.jpg" alt="Zdjęcie Jowisza z widoczną Wielką Czerwoną Plamą" width="380" class="grafika">
+    <p class="podpis">
+        Grafika 4. Jowisz. Autor: NASA/JPL/USGS (zdjęcie PIA00343), domena publiczna -
+        zobacz sekcję „Źródła”.
+    </p>
+
+    <!-- ============ CZĘŚĆ TEMATYCZNA 5: DANE I OBLICZENIA ============ -->
+    <h2>5. Dane, obliczenia i wykres</h2>
+    <p>
+        Dane o planetach zebrałem w arkuszu kalkulacyjnym i tam wykonałem obliczenia.
+        Tę samą tabelę pokazuję niżej na <strong>trzy różne sposoby</strong> -
+        każdy z nich przyda się w waszych projektach.
+    </p>
+
+    <!-- --- SPOSÓB 1: zwykła tabela HTML --- -->
+    <h3>Sposób 1: zwykła tabela napisana w HTML-u</h3>
+    <p>
+        Tabelę budujemy znacznikami <em>table</em>, <em>tr</em>, <em>th</em> i <em>td</em>,
+        a jej wygląd ustawiamy w pliku <em>style.css</em>. Dzięki temu pasuje do reszty strony.
+        Minus: liczby trzeba przepisać ręcznie, więc po zmianie w arkuszu trzeba poprawić
+        je także tutaj.
+    </p>
+
+    <table>
+        <tr>
+            <th>Planeta</th>
+            <th>Typ</th>
+            <th>Średnica [km]</th>
+            <th>Odległość od Słońca [mln km]</th>
+            <th>Liczba księżyców</th>
+            <th>Średnica względem Ziemi</th>
+        </tr>
+        <tr>
+            <td>Merkury</td><td>skalista</td><td>4 879</td><td>57,9</td><td>0</td><td>0,38</td>
+        </tr>
+        <tr>
+            <td>Wenus</td><td>skalista</td><td>12 104</td><td>108,2</td><td>0</td><td>0,95</td>
+        </tr>
+        <tr>
+            <td>Ziemia</td><td>skalista</td><td>12 756</td><td>149,6</td><td>1</td><td>1,00</td>
+        </tr>
+        <tr>
+            <td>Mars</td><td>skalista</td><td>6 792</td><td>227,9</td><td>2</td><td>0,53</td>
+        </tr>
+        <tr>
+            <td>Jowisz</td><td>gazowy olbrzym</td><td>142 984</td><td>778,6</td><td>115</td><td>11,21</td>
+        </tr>
+        <tr>
+            <td>Saturn</td><td>gazowy olbrzym</td><td>120 536</td><td>1 433,5</td><td>293</td><td>9,45</td>
+        </tr>
+        <tr>
+            <td>Uran</td><td>lodowy olbrzym</td><td>51 118</td><td>2 872,5</td><td>29</td><td>4,01</td>
+        </tr>
+        <tr>
+            <td>Neptun</td><td>lodowy olbrzym</td><td>49 528</td><td>4 495,1</td><td>16</td><td>3,88</td>
+        </tr>
+        <tr class="podsumowanie">
+            <td><strong>Razem księżyców</strong></td>
+            <td>SUMA</td><td>-</td><td>-</td><td><strong>456</strong></td><td>-</td>
+        </tr>
+        <tr class="podsumowanie">
+            <td><strong>Średnia odległość od Słońca</strong></td>
+            <td>ŚREDNIA</td><td>-</td><td><strong>1 265,4</strong></td><td>-</td><td>-</td>
+        </tr>
+        <tr class="podsumowanie">
+            <td><strong>Największa średnica</strong></td>
+            <td>MAX</td><td><strong>142 984</strong></td><td>-</td><td>-</td><td>-</td>
+        </tr>
+    </table>
+
+    <p>
+        W arkuszu policzyłem trzy rzeczy, każdą inną formułą:
+    </p>
+    <ul>
+        <li>ostatnia kolumna: <strong>=C2/$C$4</strong> - ile razy planeta jest większa od Ziemi;</li>
+        <li><strong>=SUMA(E2:E9)</strong> - razem księżyców wszystkich planet;</li>
+        <li><strong>=ŚREDNIA(D2:D9)</strong> oraz <strong>=MAX(C2:C9)</strong> - średnia odległość i największa średnica.</li>
+    </ul>
+
+    <!-- --- SPOSÓB 2: tabela wstawiona z arkusza przez iframe --- -->
+    <h3>Sposób 2: tabela wyeksportowana z arkusza i wstawiona w okienku</h3>
+    <p>
+        W Arkuszach Google wybrałem <em>Plik &rarr; Pobierz &rarr; Strona internetowa</em>.
+        Dostałem gotowy plik HTML, który wrzuciłem do folderu <em>arkusz</em>, i pokazuję go
+        tutaj w okienku. Taki plik wygląda dokładnie jak arkusz - widać nawet litery kolumn
+        i numery wierszy.
+    </p>
+    <!-- Znacznik iframe to "okienko", w którym wyświetla się inny plik.
+         width i height działają tak samo jak przy obrazku. -->
+    <iframe src="arkusz/tabela-google.html" width="100%" height="430"
+            title="Tabela z arkusza kalkulacyjnego wyeksportowana z Arkuszy Google"
+            class="arkusz-okno"></iframe>
+    <p class="podpis">
+        Ta tabela ma własny wygląd, pochodzący z arkusza - nasz plik <em>style.css</em>
+        w ogóle jej nie dotyczy. Zawartość okienka to osobny plik i rządzi się własnymi zasadami.
+    </p>
+
+    <!-- --- SPOSÓB 3: plik do pobrania --- -->
+    <h3>Sposób 3: odnośnik do pobrania pliku arkusza</h3>
+    <p>
+        Najprostszy sposób: udostępniamy plik, a kto chce, ten go pobiera i otwiera u siebie.
+        Dopiero wtedy widać formuły i można zmienić dane, żeby sprawdzić, jak przeliczą się wyniki.
+    </p>
+    <p>
+        <a href="arkusz/uklad-sloneczny.xlsx" download>Pobierz arkusz z danymi (plik .xlsx)</a>
+    </p>
+
+    <!-- --- WYKRES I WNIOSEK --- -->
+    <h3>Wykres z arkusza</h3>
+    <img src="imgs/wykres-planety.png" alt="Wykres słupkowy przedstawiający średnice ośmiu planet" class="grafika">
+    <p class="podpis">
+        Grafika 5. Wykres słupkowy średnic planet, zrobiony z danych z tabeli powyżej.
+        Ten sam wykres jest w pliku .xlsx do pobrania.
+    </p>
+
+    <div class="ramka">
+        <p>
+            <strong>Wniosek z obliczeń:</strong> cztery planety najbliżej Słońca są małe
+            i skaliste, a cztery dalsze to olbrzymy. Jowisz ma średnicę ponad 11 razy większą
+            od Ziemi, a wszystkie planety mają razem 456 księżyców - prawie wszystkie należą
+            do Jowisza i Saturna. Im dalej od Słońca, tym większe odstępy między orbitami:
+            średnia odległość planety od Słońca to aż 1 265,4 mln km.
+        </p>
+    </div>
+
+    <!-- ============ ŹRÓDŁA ============ -->
+    <h2>Źródła</h2>
+    <ul>
+        <li>
+            Średnice i odległości:
+            <a href="https://science.nasa.gov/solar-system/">NASA Science - Solar System</a>
+            (dostęp 16.11.2026)
+        </li>
+        <li>
+            Liczba księżyców:
+            <a href="https://ssd.jpl.nasa.gov/sats/discovery.html">NASA/JPL - Planetary Satellite Discovery Circumstances</a>
+            (dostęp 16.11.2026; ta liczba co jakiś czas rośnie)
+        </li>
+        <li>
+            Opisy planet:
+            <a href="https://pl.wikipedia.org/wiki/Uk%C5%82ad_S%C5%82oneczny">Wikipedia - Układ Słoneczny</a>
+        </li>
+        <li>
+            Zdjęcie Jowisza: NASA/JPL/USGS, PIA00343,
+            <a href="https://commons.wikimedia.org/wiki/File:Jupiter.jpg">plik w Wikimedia Commons</a>,
+            domena publiczna
+        </li>
+        <li>
+            Grafiki 3 i 5 - wykonane samodzielnie na potrzeby tej strony
+        </li>
+    </ul>
+
+    <!-- ============ POWRÓT NA STRONĘ GŁÓWNĄ ============ -->
+    <div class="stopka">
+        <p>
+            <a href="index.html">&larr; Wróć na stronę główną</a> &middot;
+            <a href="https://github.com/mikub97/uklad-sloneczny">Zobacz kod źródłowy tej strony</a>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

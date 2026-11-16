@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Jak to zrobiono? - Układ Słoneczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="strona">
+
+    <div class="menu">
+        <a href="index.html">Strona główna</a>
+        <a href="planety.html">Planety</a>
+        <a href="jak-to-zrobione.html">Jak to zrobiono?</a>
+        <a href="https://github.com/mikub97/uklad-sloneczny">Kod tej strony (GitHub)</a>
+    </div>
+
+    <h1>Jak to zrobiono?</h1>
+    <p>
+        Ta podstrona nie jest częścią projektu o Układzie Słonecznym - to ściąga dla Was.
+        Znajdziecie tu listę wymagań projektu i informację, w którym miejscu tej strony
+        każde z nich zostało spełnione. Dzięki temu możecie podejrzeć gotowy przykład,
+        zanim zrobicie to samo po swojemu.
+    </p>
+
+    <div class="ramka">
+        <p>
+            <strong>Nie kopiujcie tego kodu do swojego projektu.</strong> Macie pisać własny,
+            w Notatniku. Tutaj patrzycie tylko po to, żeby zobaczyć, jak dana rzecz wygląda
+            w kodzie - a potem piszecie ją samodzielnie, swoimi słowami i o swoim temacie.
+        </p>
+    </div>
+
+    <h2>Jak podejrzeć kod tej strony?</h2>
+    <ul>
+        <li>
+            W przeglądarce: kliknij prawym przyciskiem myszy na stronie i wybierz
+            <em>Pokaż źródło strony</em> (albo naciśnij <strong>Ctrl + U</strong>).
+        </li>
+        <li>
+            Na GitHubie - tam widać wszystkie pliki naraz:
+            <a href="https://github.com/mikub97/uklad-sloneczny">github.com/mikub97/uklad-sloneczny</a>
+        </li>
+        <li>
+            Pojedyncze pliki:
+            <a href="https://github.com/mikub97/uklad-sloneczny/blob/main/index.html">index.html</a>,
+            <a href="https://github.com/mikub97/uklad-sloneczny/blob/main/planety.html">planety.html</a>,
+            <a href="https://github.com/mikub97/uklad-sloneczny/blob/main/style.css">style.css</a>
+        </li>
+    </ul>
+    <p>
+        W kodzie zostawiłem komentarze po polsku - to linijki zaczynające się od
+        <em>&lt;!--</em>. Przeglądarka ich nie pokazuje, ale czytający kod je widzi.
+    </p>
+
+    <h2>Lista wymagań i gdzie je znaleźć</h2>
+    <table>
+        <tr>
+            <th>Wymaganie</th>
+            <th>Gdzie to jest na tej stronie</th>
+            <th>Plik</th>
+        </tr>
+        <tr>
+            <td>Część startowa</td>
+            <td>Tytuł i wstęp na samej górze strony głównej</td>
+            <td>index.html</td>
+        </tr>
+        <tr>
+            <td>Minimum cztery części tematyczne</td>
+            <td>Części 1-2 na stronie głównej, części 3-5 na podstronie „Planety”</td>
+            <td>index.html, planety.html</td>
+        </tr>
+        <tr>
+            <td>Osobna podstrona z powrotem na stronę główną</td>
+            <td>Podstrona „Planety”, a na jej dole odnośnik „Wróć na stronę główną”</td>
+            <td>planety.html</td>
+        </tr>
+        <tr>
+            <td>Działające menu</td>
+            <td>Pasek z odnośnikami na górze każdej strony (ten sam kod wklejony w każdym pliku)</td>
+            <td>wszystkie strony + style.css</td>
+        </tr>
+        <tr>
+            <td>Nagłówki, akapity, lista</td>
+            <td>Nagłówki części, akapity opisów, lista ciekawostek o Słońcu i listy planet</td>
+            <td>index.html, planety.html</td>
+        </tr>
+        <tr>
+            <td>Minimum trzy grafiki, w tym jedna własna</td>
+            <td>Pięć grafik: trzy własne (schemat, porównanie, wykres) i dwa zdjęcia NASA</td>
+            <td>folder imgs</td>
+        </tr>
+        <tr>
+            <td>Dwa odnośniki do źródeł i link do filmu</td>
+            <td>Sekcja „Źródła” na obu stronach; film to animacja 3D na platformie MEN</td>
+            <td>index.html, planety.html</td>
+        </tr>
+        <tr>
+            <td>Sekcja „Źródła”</td>
+            <td>Na dole każdej strony, z autorem i licencją każdego zdjęcia</td>
+            <td>index.html, planety.html</td>
+        </tr>
+        <tr>
+            <td>Tabela z wynikami obliczeń</td>
+            <td>Część 5, „Sposób 1” - zwykła tabela HTML z wierszami podsumowania</td>
+            <td>planety.html</td>
+        </tr>
+        <tr>
+            <td>Wykres z arkusza</td>
+            <td>Część 5, pod tabelami - obrazek z wykresem słupkowym</td>
+            <td>planety.html, imgs</td>
+        </tr>
+        <tr>
+            <td>Plik arkusza</td>
+            <td>Część 5, „Sposób 3” - odnośnik do pobrania pliku .xlsx</td>
+            <td>folder arkusz</td>
+        </tr>
+    </table>
+
+    <h2>Tabela z arkusza - trzy sposoby</h2>
+    <p>
+        W części 5 na podstronie „Planety” ta sama tabela jest pokazana na trzy sposoby.
+        Wybierzcie ten, który Wam pasuje - albo zróbcie jak ja i pokażcie kilka.
+    </p>
+    <ul>
+        <li>
+            <strong>Przepisana ręcznie w HTML-u</strong> - wygląda jak reszta strony i zawsze działa.
+            Trzeba uważać, żeby liczby zgadzały się z arkuszem.
+        </li>
+        <li>
+            <strong>Wyeksportowana z arkusza</strong> - w Arkuszach Google wybieramy
+            <em>Plik &rarr; Pobierz &rarr; Strona internetowa</em>. Dostajemy plik ZIP,
+            rozpakowujemy go, wrzucamy do folderu projektu i pokazujemy znacznikiem
+            <em>iframe</em>. (Jest też opcja <em>Plik &rarr; Udostępnij &rarr; Opublikuj w internecie</em>,
+            ale wtedy arkusz musi być publiczny i strona wymaga internetu - dlatego wybrałem eksport do pliku.)
+        </li>
+        <li>
+            <strong>Plik do pobrania</strong> - jedna linijka z odnośnikiem i słowem
+            <em>download</em>. Najłatwiejsze, a przy tym pokazuje, że obliczenia naprawdę są w arkuszu.
+        </li>
+    </ul>
+
+    <h2>Błędy, które najłatwiej popełnić</h2>
+    <ul>
+        <li>
+            <strong>Krzywe cudzysłowy.</strong> Jeśli skopiujecie kod z Worda albo z czatu,
+            zamiast " mogą pojawić się znaki &bdquo; i &rdquo;. Przeglądarka ich nie rozumie
+            i obrazek albo odnośnik przestaje działać. W Notatniku takiego problemu nie ma.
+        </li>
+        <li>
+            <strong>Brak linijki z kodowaniem.</strong> Bez
+            <em>&lt;meta charset="UTF-8"&gt;</em> polskie znaki potrafią zamienić się w krzaczki.
+        </li>
+        <li>
+            <strong>Zła nazwa pliku.</strong> <em>Zdjecie.JPG</em> i <em>zdjecie.jpg</em> to dla
+            serwera dwa różne pliki. Najbezpieczniej: małe litery, bez spacji i bez polskich znaków.
+        </li>
+        <li>
+            <strong>Zapomniany znacznik zamykający</strong>, np. <em>&lt;/ul&gt;</em> -
+            wtedy strona wygląda dziwnie od tego miejsca w dół.
+        </li>
+        <li>
+            <strong>Obrazek w innym folderze.</strong> Jeśli w kodzie jest
+            <em>imgs/zdjecie.jpg</em>, to plik naprawdę musi leżeć w folderze <em>imgs</em>.
+        </li>
+    </ul>
+
+    <div class="stopka">
+        <p>
+            <a href="index.html">&larr; Wróć na stronę główną</a> &middot;
+            <a href="https://github.com/mikub97/uklad-sloneczny">Zobacz kod źródłowy tej strony</a>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
