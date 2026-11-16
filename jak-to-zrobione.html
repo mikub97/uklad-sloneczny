@@ -35,6 +35,9 @@
     </div>
 
     <p>
+        Znajdziesz tu trzy rzeczy: <a href="#jak-podstrona">instrukcje krok po kroku</a>
+        do każdego wymagania, mapę „gdzie to jest zrobione na tej stronie”
+        oraz listę najczęstszych błędów.
         Nie wiesz jeszcze, co robi dany znacznik? Najpierw zajrzyj do
         <a href="sciaga.html">Ściągi HTML i CSS</a> - tam jest wprowadzenie
         i spis wszystkich znaczników oraz właściwości z wyjaśnieniami.
@@ -63,10 +66,271 @@
         <em>&lt;!--</em>. Przeglądarka ich nie pokazuje, ale czytający kod je widzi.
     </p>
 
+    <h2>Jak zrobić poszczególne elementy?</h2>
+    <p>
+        Tu jest praktyczna instrukcja do każdego wymagania z projektu - krok po kroku,
+        z przykładem kodu. Kolejność jest taka, jak najwygodniej się pracuje:
+        najpierw podstrona i odnośniki, bo bez nich nie zrobisz menu.
+        Jeśli nie wiesz, co dany znacznik oznacza, zajrzyj do
+        <a href="sciaga.html">Ściągi HTML i CSS</a>.
+    </p>
+
+    <!-- ---------- PODSTRONA ---------- -->
+    <h3 id="jak-podstrona">1. Jak zrobić podstronę (i powrót na stronę główną)</h3>
+    <p>
+        Podstrona to nie żadna magia - to po prostu <strong>drugi plik z rozszerzeniem
+        .html, leżący w tym samym folderze</strong> co strona główna. Przeglądarka
+        przechodzi między plikami wtedy, gdy klikniesz odnośnik.
+    </p>
+    <ol>
+        <li>Otwórz Notatnik i przepisz ten sam szkielet strony co w <span class="kod">index.html</span>.</li>
+        <li>
+            Zapisz go <strong>w tym samym folderze</strong> pod nazwą, która mówi, co w nim jest -
+            np. <span class="kod">planety.html</span>. Pamiętaj o ustawieniach:
+            <em>Zapisz jako typ: Wszystkie pliki</em> oraz <em>Kodowanie: UTF-8</em>.
+        </li>
+        <li>Wpisz treść podstrony: nagłówek, akapity, grafiki.</li>
+        <li>W <span class="kod">index.html</span> dodaj odnośnik prowadzący do podstrony.</li>
+        <li>W podstronie dodaj odnośnik prowadzący <strong>z powrotem</strong> na stronę główną - to jest wymagane w projekcie.</li>
+        <li>Podłącz w niej ten sam <span class="kod">style.css</span>, żeby obie strony wyglądały tak samo.</li>
+    </ol>
+    <p>Cała podstrona może wyglądać tak:</p>
+    <pre class="kod-blok">&lt;!DOCTYPE html&gt;
+&lt;html lang="pl"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Planety&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Planety&lt;/h1&gt;
+    &lt;p&gt;Tu jest treść podstrony.&lt;/p&gt;
+
+    &lt;a href="index.html"&gt;Wróć na stronę główną&lt;/a&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    <p>
+        <strong>Na co uważać:</strong> oba pliki muszą leżeć w tym samym folderze
+        (jeśli podstrona wyląduje na pulpicie, a strona główna w „Dokumentach”,
+        odnośnik nie zadziała). Nazwa pliku bez spacji i bez polskich znaków.
+        Na koniec kliknij odnośnik <strong>w obie strony</strong> - tam i z powrotem.
+    </p>
+
+    <!-- ---------- ODNOŚNIKI ---------- -->
+    <h3 id="jak-odnosniki">2. Jak zrobić odnośniki</h3>
+    <p>
+        Każdy odnośnik to znacznik <span class="kod">&lt;a&gt;</span>. W atrybucie
+        <span class="kod">href</span> wpisujesz, <em>dokąd</em> prowadzi, a między
+        znacznikami - tekst, w który się klika. Rodzaje są cztery:
+    </p>
+    <table class="sciaga">
+        <tr><th>Rodzaj</th><th>Jak zapisać</th><th>Kiedy</th></tr>
+        <tr>
+            <td>Do własnej podstrony</td>
+            <td><span class="kod">&lt;a href="planety.html"&gt;Planety&lt;/a&gt;</span></td>
+            <td>Menu, powrót na stronę główną.</td>
+        </tr>
+        <tr>
+            <td>Do strony w internecie</td>
+            <td><span class="kod">&lt;a href="https://pl.wikipedia.org"&gt;Wikipedia&lt;/a&gt;</span></td>
+            <td>Dwa odnośniki do źródeł - wymagane w projekcie.</td>
+        </tr>
+        <tr>
+            <td>Do filmu</td>
+            <td><span class="kod">&lt;a href="https://www.youtube.com/watch?v=..."&gt;Film&lt;/a&gt;</span></td>
+            <td>Tak samo jak zwykły odnośnik - wklejasz adres z paska przeglądarki.</td>
+        </tr>
+        <tr>
+            <td>Do pliku do pobrania</td>
+            <td><span class="kod">&lt;a href="arkusz/dane.xlsx" download&gt;Pobierz&lt;/a&gt;</span></td>
+            <td>Udostępnienie arkusza. Słowo <span class="kod">download</span> każe plik pobrać, a nie otwierać.</td>
+        </tr>
+    </table>
+    <p>
+        Jeśli chcesz, żeby odnośnik otworzył się w nowej karcie (dobry pomysł przy linkach
+        wychodzących poza Twoją stronę), dopisz <span class="kod">target="_blank"</span>:
+    </p>
+    <pre class="kod-blok">&lt;a href="https://science.nasa.gov" target="_blank"&gt;NASA&lt;/a&gt;</pre>
+    <p>
+        <strong>Na co uważać:</strong> adres zewnętrzny <strong>musi</strong> zaczynać się
+        od <span class="kod">https://</span> - bez tego przeglądarka uzna, że szukasz pliku
+        w swoim folderze, i pokaże błąd. Po wpisaniu każdego odnośnika kliknij go i sprawdź,
+        czy naprawdę działa.
+    </p>
+
+    <!-- ---------- MENU ---------- -->
+    <h3 id="jak-menu">3. Jak zrobić menu</h3>
+    <p>
+        Menu to zwykły <span class="kod">&lt;div&gt;</span> z kilkoma odnośnikami w środku.
+        Dostaje klasę, dzięki której CSS wie, jak ma go pomalować.
+    </p>
+    <pre class="kod-blok">&lt;div class="menu"&gt;
+    &lt;a href="index.html"&gt;Strona główna&lt;/a&gt;
+    &lt;a href="planety.html"&gt;Planety&lt;/a&gt;
+&lt;/div&gt;</pre>
+    <p>A w pliku <span class="kod">style.css</span>:</p>
+    <pre class="kod-blok">.menu {
+    background-color: #1c2547;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu a {
+    display: inline-block;
+    background-color: #2a3566;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+}</pre>
+    <p>
+        <span class="kod">display: inline-block</span> ustawia odnośniki obok siebie
+        zamiast jeden pod drugim, a <span class="kod">text-decoration: none</span>
+        zdejmuje z nich podkreślenie.
+    </p>
+    <p>
+        <strong>Na co uważać:</strong> ten sam blok menu trzeba wkleić do
+        <strong>każdego</strong> pliku .html - inaczej z podstrony nie da się nigdzie przejść.
+        Gdy później coś w menu zmienisz, popraw je we wszystkich plikach. Na tej stronie
+        menu jest w pięciu plikach i wszędzie jest identyczne.
+    </p>
+
+    <!-- ---------- CZĘŚCI TEMATYCZNE ---------- -->
+    <h3 id="jak-czesci">4. Jak zrobić część startową i części tematyczne</h3>
+    <p>
+        Część startowa to <span class="kod">&lt;h1&gt;</span> z tytułem strony i akapit,
+        który mówi, o czym ta strona jest. Każda kolejna część tematyczna to
+        <span class="kod">&lt;h2&gt;</span> z tytułem i pod nim akapity.
+    </p>
+    <pre class="kod-blok">&lt;h1&gt;Układ Słoneczny&lt;/h1&gt;
+&lt;p&gt;Ta strona opowiada o Słońcu i ośmiu planetach.&lt;/p&gt;
+
+&lt;h2&gt;1. Czym jest Układ Słoneczny?&lt;/h2&gt;
+&lt;p&gt;Pierwszy akapit tej części.&lt;/p&gt;
+&lt;p&gt;Drugi akapit tej części.&lt;/p&gt;</pre>
+    <p>
+        <strong>Na co uważać:</strong> <span class="kod">&lt;h1&gt;</span> powinien być
+        tylko jeden na stronie. Każdy akapit zamykaj w osobnym
+        <span class="kod">&lt;p&gt;</span> - nie rozdzielaj tekstu samymi
+        <span class="kod">&lt;br&gt;</span>. Czterech części tematycznych nie musisz
+        wciskać na stronę główną: mogą być rozdzielone między nią a podstronę.
+    </p>
+
+    <!-- ---------- LISTA ---------- -->
+    <h3 id="jak-lista">5. Jak zrobić listę</h3>
+    <p>
+        Lista składa się z dwóch rodzajów znaczników: jeden opakowuje całość,
+        a drugi oznacza każdy punkt z osobna.
+    </p>
+    <pre class="kod-blok">&lt;ul&gt;
+    &lt;li&gt;Merkury&lt;/li&gt;
+    &lt;li&gt;Wenus&lt;/li&gt;
+    &lt;li&gt;Ziemia&lt;/li&gt;
+&lt;/ul&gt;</pre>
+    <p>
+        <span class="kod">&lt;ul&gt;</span> daje kropki, a
+        <span class="kod">&lt;ol&gt;</span> numery 1, 2, 3 - reszta działa tak samo.
+    </p>
+
+    <!-- ---------- GRAFIKI ---------- -->
+    <h3 id="jak-grafiki">6. Jak wstawić grafiki</h3>
+    <p>
+        Najpierw zrób w folderze projektu podfolder <span class="kod">imgs</span>
+        i wrzuć do niego obrazki. Potem wstawiasz je tak:
+    </p>
+    <pre class="kod-blok">&lt;img src="imgs/mars.jpg" alt="Powierzchnia Marsa" width="400"&gt;
+&lt;p&gt;Grafika 1. Mars sfotografowany przez łazika.&lt;/p&gt;</pre>
+    <p>
+        <span class="kod">src</span> to ścieżka do pliku, <span class="kod">alt</span>
+        to opis dla kogoś, kto obrazka nie zobaczy, a <span class="kod">width</span>
+        ustawia szerokość w pikselach (wysokość dopasuje się sama).
+    </p>
+    <p>Projekt wymaga trzech grafik, w tym <strong>jednej własnej</strong>. Skąd je wziąć:</p>
+    <ul>
+        <li>
+            <strong>Własna</strong> - narysuj ją w Paincie, zrób zdjęcie telefonem
+            albo przygotuj wykres w arkuszu. Wykres z arkusza liczy się jako własna grafika.
+        </li>
+        <li>
+            <strong>Z internetu</strong> - tylko takie, które wolno użyć: domena publiczna
+            albo licencja Creative Commons. Dobre miejsca to zdjęcia NASA i Wikimedia Commons.
+            Przy każdym takim obrazku <strong>musisz podać autora i licencję</strong> w sekcji „Źródła”.
+        </li>
+    </ul>
+    <p>
+        <strong>Na co uważać:</strong> nie bierz pierwszego lepszego zdjęcia z wyszukiwarki
+        grafik - większość z nich jest czyjaś i nie wolno ich użyć. Nazwy plików pisz
+        małymi literami, bez spacji i polskich znaków: <span class="kod">mars.jpg</span>,
+        a nie <span class="kod">Zdjęcie Marsa.JPG</span>.
+    </p>
+
+    <!-- ---------- TABELA I WYKRES ---------- -->
+    <h3 id="jak-tabela">7. Jak zrobić tabelę z wynikami i wykres z arkusza</h3>
+    <p>
+        Obliczenia robisz <strong>w arkuszu</strong> (Excel albo Arkusze Google),
+        a na stronie pokazujesz ich wynik. Kolejność pracy:
+    </p>
+    <ol>
+        <li>Zbierz dane w arkuszu - tyle pozycji, ile wymaga Twoja klasa.</li>
+        <li>Dodaj formuły, np. <span class="kod">=B2*C2</span>, <span class="kod">=SUMA(C2:C9)</span>.</li>
+        <li>Zaznacz dane i wstaw wykres.</li>
+        <li>
+            Zapisz wykres jako obrazek: w Excelu kliknij wykres prawym przyciskiem i wybierz
+            <em>Zapisz jako obraz</em>, a w Arkuszach Google - trzy kropki w rogu wykresu
+            i <em>Pobierz &rarr; PNG</em>. Plik wrzuć do folderu <span class="kod">imgs</span>.
+        </li>
+        <li>Przepisz tabelę z wynikami do HTML-a i wstaw obrazek z wykresem.</li>
+    </ol>
+    <p>Najprostsza tabela wygląda tak:</p>
+    <pre class="kod-blok">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Planeta&lt;/th&gt;
+        &lt;th&gt;Średnica [km]&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Merkury&lt;/td&gt;
+        &lt;td&gt;4 879&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+    <p>
+        Każdy <span class="kod">&lt;tr&gt;</span> to jeden wiersz,
+        <span class="kod">&lt;th&gt;</span> to komórka nagłówka, a
+        <span class="kod">&lt;td&gt;</span> zwykła komórka. W każdym wierszu musi być
+        tyle samo komórek, inaczej tabela się „rozjedzie”.
+    </p>
+    <p>
+        Tabelę można pokazać na trzy różne sposoby - są opisane
+        <a href="#trzy-sposoby">niżej na tej stronie</a>.
+        Pamiętaj, żeby liczby w tabeli HTML zgadzały się z tymi w arkuszu.
+    </p>
+
+    <!-- ---------- ŹRÓDŁA ---------- -->
+    <h3 id="jak-zrodla">8. Jak zrobić sekcję „Źródła”</h3>
+    <p>
+        Na końcu strony dajesz nagłówek „Źródła” i listę: skąd masz informacje
+        i skąd masz obrazki. Przy zdjęciach z internetu podajesz autora i licencję,
+        a przy danych - datę sprawdzenia.
+    </p>
+    <pre class="kod-blok">&lt;h2&gt;Źródła&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="https://pl.wikipedia.org"&gt;Wikipedia&lt;/a&gt; - opisy planet&lt;/li&gt;
+    &lt;li&gt;Zdjęcie Marsa: NASA/JPL, domena publiczna&lt;/li&gt;
+    &lt;li&gt;Grafika 1 - wykonana samodzielnie&lt;/li&gt;
+&lt;/ul&gt;</pre>
+    <p>
+        <strong>Po co data?</strong> Niektóre dane się zmieniają - na przykład liczba
+        znanych księżyców rośnie z roku na rok. Data mówi, kiedy sprawdzałeś informację,
+        i tym samym chroni Cię przed zarzutem, że podałeś coś nieaktualnego.
+    </p>
+
     <h2>Lista wymagań i gdzie je znaleźć</h2>
     <p>
         Wymagania pochodzą z <a href="program.html">Programu zajęć</a> - tam jest
         pełna treść, razem z zakresem spotkań i zasadami oceniania.
+        <strong>Kliknij w nazwę wymagania</strong>, żeby przejść do instrukcji,
+        jak je zrobić.
     </p>
     <table>
         <tr>
@@ -75,63 +339,63 @@
             <th>Plik</th>
         </tr>
         <tr>
-            <td>Część startowa</td>
+            <td><a href="#jak-czesci">Część startowa</a></td>
             <td>Tytuł i wstęp na samej górze strony głównej</td>
             <td>index.html</td>
         </tr>
         <tr>
-            <td>Minimum cztery części tematyczne</td>
+            <td><a href="#jak-czesci">Minimum cztery części tematyczne</a></td>
             <td>Części 1-2 na stronie głównej, części 3-5 na podstronie „Planety”</td>
             <td>index.html, planety.html</td>
         </tr>
         <tr>
-            <td>Osobna podstrona z powrotem na stronę główną</td>
+            <td><a href="#jak-podstrona">Osobna podstrona z powrotem na stronę główną</a></td>
             <td>Podstrona „Planety”, a na jej dole odnośnik „Wróć na stronę główną”</td>
             <td>planety.html</td>
         </tr>
         <tr>
-            <td>Działające menu</td>
+            <td><a href="#jak-menu">Działające menu</a></td>
             <td>Pasek z odnośnikami na górze każdej strony (ten sam kod wklejony w każdym pliku)</td>
             <td>wszystkie strony + style.css</td>
         </tr>
         <tr>
-            <td>Nagłówki, akapity, lista</td>
+            <td><a href="#jak-lista">Nagłówki, akapity, lista</a></td>
             <td>Nagłówki części, akapity opisów, lista ciekawostek o Słońcu i listy planet</td>
             <td>index.html, planety.html</td>
         </tr>
         <tr>
-            <td>Minimum trzy grafiki, w tym jedna własna</td>
+            <td><a href="#jak-grafiki">Minimum trzy grafiki, w tym jedna własna</a></td>
             <td>Pięć grafik: trzy własne (schemat, porównanie, wykres) i dwa zdjęcia NASA</td>
             <td>folder imgs</td>
         </tr>
         <tr>
-            <td>Dwa odnośniki do źródeł i link do filmu</td>
+            <td><a href="#jak-odnosniki">Dwa odnośniki do źródeł i link do filmu</a></td>
             <td>Sekcja „Źródła” na obu stronach; film to animacja 3D na platformie MEN</td>
             <td>index.html, planety.html</td>
         </tr>
         <tr>
-            <td>Sekcja „Źródła”</td>
+            <td><a href="#jak-zrodla">Sekcja „Źródła”</a></td>
             <td>Na dole każdej strony, z autorem i licencją każdego zdjęcia</td>
             <td>index.html, planety.html</td>
         </tr>
         <tr>
-            <td>Tabela z wynikami obliczeń</td>
+            <td><a href="#jak-tabela">Tabela z wynikami obliczeń</a></td>
             <td>Część 5, „Sposób 1” - zwykła tabela HTML z wierszami podsumowania</td>
             <td>planety.html</td>
         </tr>
         <tr>
-            <td>Wykres z arkusza</td>
+            <td><a href="#jak-tabela">Wykres z arkusza</a></td>
             <td>Część 5, pod tabelami - obrazek z wykresem słupkowym</td>
             <td>planety.html, imgs</td>
         </tr>
         <tr>
-            <td>Plik arkusza</td>
+            <td><a href="#trzy-sposoby">Plik arkusza</a></td>
             <td>Część 5, „Sposób 3” - odnośnik do pobrania pliku .xlsx</td>
             <td>folder arkusz</td>
         </tr>
     </table>
 
-    <h2>Tabela z arkusza - trzy sposoby</h2>
+    <h2 id="trzy-sposoby">Tabela z arkusza - trzy sposoby</h2>
     <p>
         W części 5 na podstronie „Planety” ta sama tabela jest pokazana na trzy sposoby.
         Wybierzcie ten, który Wam pasuje - albo zróbcie jak ja i pokażcie kilka.
