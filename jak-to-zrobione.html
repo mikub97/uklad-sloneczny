@@ -43,11 +43,48 @@
         i spis wszystkich znaczników oraz właściwości z wyjaśnieniami.
     </p>
 
-    <h2>Jak podejrzeć kod tej strony?</h2>
+    <div class="ramka">
+        <p><strong>Na tej stronie:</strong></p>
+        <ul>
+            <li><a href="#podejrzyj">Jak podejrzeć kod tej strony?</a></li>
+            <li>
+                <a href="#jak-zrobic">Jak zrobić poszczególne elementy?</a>
+                <ul>
+                    <li><a href="#jak-podstrona">1. Podstrona i powrót na stronę główną</a></li>
+                    <li><a href="#jak-odnosniki">2. Odnośniki</a></li>
+                    <li><a href="#jak-menu">3. Menu</a></li>
+                    <li><a href="#jak-czesci">4. Część startowa i części tematyczne</a></li>
+                    <li><a href="#jak-lista">5. Lista</a></li>
+                    <li><a href="#jak-grafiki">6. Grafiki</a></li>
+                    <li><a href="#jak-tabela">7. Tabela z wynikami i wykres</a></li>
+                    <li><a href="#jak-zrodla">8. Sekcja „Źródła”</a></li>
+                </ul>
+            </li>
+            <li><a href="#mapa">Lista wymagań i gdzie je znaleźć</a></li>
+            <li><a href="#trzy-sposoby">Tabela z arkusza - trzy sposoby</a></li>
+            <li>
+                <a href="#nie-dziala">Co robić, gdy coś nie działa?</a>
+                <ul>
+                    <li><a href="#nd-notatnik">Otwiera się Notatnik zamiast przeglądarki</a></li>
+                    <li><a href="#nd-pusta">Strona jest pusta albo biała</a></li>
+                    <li><a href="#nd-obrazek">Zamiast obrazka pusta ikonka</a></li>
+                    <li><a href="#nd-css">Zmiany w style.css nic nie dają</a></li>
+                    <li><a href="#nd-krzaczki">Zamiast polskich liter krzaczki</a></li>
+                    <li><a href="#nd-link">Odnośnik nie działa</a></li>
+                    <li><a href="#nd-rozjezdza">Strona rozjeżdża się od pewnego miejsca</a></li>
+                    <li><a href="#nd-nadal">Nadal nie działa</a></li>
+                </ul>
+            </li>
+            <li><a href="#bledy">Błędy, które najłatwiej popełnić</a></li>
+        </ul>
+    </div>
+
+    <h2 id="podejrzyj">Jak podejrzeć kod tej strony?</h2>
     <ul>
         <li>
             W przeglądarce: kliknij prawym przyciskiem myszy na stronie i wybierz
-            <em>Pokaż źródło strony</em> (albo naciśnij <strong>Ctrl + U</strong>).
+            <em>Pokaż źródło strony</em> (skrót: <strong>Ctrl + U</strong> na Windowsie,
+            <strong>Cmd + Option + U</strong> na Macu).
         </li>
         <li>
             Na GitHubie - tam widać wszystkie pliki naraz:
@@ -66,7 +103,7 @@
         <em>&lt;!--</em>. Przeglądarka ich nie pokazuje, ale czytający kod je widzi.
     </p>
 
-    <h2>Jak zrobić poszczególne elementy?</h2>
+    <h2 id="jak-zrobic">Jak zrobić poszczególne elementy?</h2>
     <p>
         Tu jest praktyczna instrukcja do każdego wymagania z projektu - krok po kroku,
         z przykładem kodu. Kolejność jest taka, jak najwygodniej się pracuje:
@@ -114,7 +151,9 @@
     <p>
         <strong>Na co uważać:</strong> oba pliki muszą leżeć w tym samym folderze
         (jeśli podstrona wyląduje na pulpicie, a strona główna w „Dokumentach”,
-        odnośnik nie zadziała). Nazwa pliku bez spacji i bez polskich znaków.
+        odnośnik nie zadziała) - jak powinien wyglądać folder projektu, pokazuje
+        <a href="sciaga.html">Ściąga HTML i CSS</a>.
+        Nazwa pliku bez spacji i bez polskich znaków.
         Na koniec kliknij odnośnik <strong>w obie strony</strong> - tam i z powrotem.
     </p>
 
@@ -325,7 +364,7 @@
         i tym samym chroni Cię przed zarzutem, że podałeś coś nieaktualnego.
     </p>
 
-    <h2>Lista wymagań i gdzie je znaleźć</h2>
+    <h2 id="mapa">Lista wymagań i gdzie je znaleźć</h2>
     <p>
         Wymagania pochodzą z <a href="program.html">Programu zajęć</a> - tam jest
         pełna treść, razem z zakresem spotkań i zasadami oceniania.
@@ -418,7 +457,156 @@
         </li>
     </ul>
 
-    <h2>Błędy, które najłatwiej popełnić</h2>
+    <h2 id="nie-dziala">Co robić, gdy coś nie działa?</h2>
+    <p>
+        Poniżej są <strong>objawy</strong>, a nie przyczyny - znajdź ten, który pasuje
+        do Twojej sytuacji, i sprawdzaj po kolei. Punkty są ustawione od najczęstszej
+        przyczyny do najrzadszej, więc zwykle wystarczy pierwszy albo drugi.
+    </p>
+    <div class="ramka">
+        <p>
+            <strong>Zanim zaczniesz szukać błędu:</strong> zapisz plik w Notatniku
+            (<strong>Ctrl + S</strong>) i odśwież stronę w przeglądarce (<strong>F5</strong>).
+            Bardzo często „nie działa” znaczy po prostu „nie zapisałem”.
+        </p>
+    </div>
+
+    <h3 id="nd-notatnik">Klikam w plik, a otwiera się Notatnik zamiast przeglądarki</h3>
+    <ol>
+        <li>
+            Plik nazywa się <span class="kod">index.html.txt</span>, a nie
+            <span class="kod">index.html</span> - Notatnik dopisał swoje rozszerzenie,
+            bo przy zapisie nie było ustawione <em>Wszystkie pliki</em>.
+        </li>
+        <li>
+            Włącz pokazywanie pełnych nazw: w Eksploratorze plików zakładka <em>Widok</em>,
+            zaznacz <em>Rozszerzenia nazw plików</em>.
+        </li>
+        <li>
+            Zmień nazwę pliku (klawisz <strong>F2</strong>) na <span class="kod">index.html</span>
+            i potwierdź ostrzeżenie. Ikona powinna zmienić się na ikonę przeglądarki.
+        </li>
+    </ol>
+
+    <h3 id="nd-pusta">Strona jest zupełnie pusta albo biała</h3>
+    <ol>
+        <li>Czy na pewno zapisałeś plik? <strong>Ctrl + S</strong>, potem <strong>F5</strong>.</li>
+        <li>
+            Czy cała treść jest <strong>pomiędzy</strong> <span class="kod">&lt;body&gt;</span>
+            a <span class="kod">&lt;/body&gt;</span>? Tekst wpisany poza nimi może się nie pokazać.
+        </li>
+        <li>
+            Czy gdzieś nie zostawiłeś otwartego komentarza <span class="kod">&lt;!--</span>
+            bez zamknięcia <span class="kod">--&gt;</span>? Wtedy przeglądarka ukrywa
+            wszystko aż do końca pliku.
+        </li>
+        <li>Czy otwierasz ten plik, który edytujesz? Sprawdź nazwę na karcie przeglądarki.</li>
+    </ol>
+
+    <h3 id="nd-obrazek">Zamiast obrazka widzę pustą ikonkę</h3>
+    <ol>
+        <li>
+            Czy plik naprawdę leży tam, gdzie wskazuje <span class="kod">src</span>?
+            Jeśli w kodzie jest <span class="kod">imgs/mars.jpg</span>, to plik
+            <span class="kod">mars.jpg</span> musi być w folderze <span class="kod">imgs</span>,
+            a ten folder obok strony.
+        </li>
+        <li>
+            Czy nazwa zgadza się <strong>co do litery</strong>, razem z wielkością liter
+            i rozszerzeniem? <span class="kod">Mars.JPG</span> to nie to samo co
+            <span class="kod">mars.jpg</span>.
+        </li>
+        <li>
+            Czy w <span class="kod">src</span> są zwykłe cudzysłowy <span class="kod">"</span>,
+            a nie „krzywe” skopiowane z Worda?
+        </li>
+        <li>
+            Czy plik na pewno jest obrazkiem? Czasem pobrany plik ma nazwę
+            <span class="kod">.jpg</span>, a w środku jest strona internetowa.
+        </li>
+    </ol>
+
+    <h3 id="nd-css">Zmieniam style.css, a strona wygląda tak samo</h3>
+    <ol>
+        <li>
+            Czy w <span class="kod">&lt;head&gt;</span> jest linijka
+            <span class="kod">&lt;link rel="stylesheet" href="style.css"&gt;</span>?
+            Bez niej plik CSS w ogóle nie jest podpięty.
+        </li>
+        <li>Czy <span class="kod">style.css</span> leży w tym samym folderze co strona?</li>
+        <li>
+            Czy po każdej wartości jest <strong>średnik</strong>, a reguła ma obie klamry
+            <span class="kod">{</span> i <span class="kod">}</span>? Jeden brakujący znak
+            potrafi wyłączyć resztę pliku.
+        </li>
+        <li>
+            Czy nazwa klasy w CSS i w HTML-u to dokładnie to samo słowo? W CSS jest
+            z kropką (<span class="kod">.menu</span>), w HTML-u bez
+            (<span class="kod">class="menu"</span>).
+        </li>
+        <li>Na koniec: <strong>Ctrl + F5</strong> - odświeżenie z pominięciem pamięci przeglądarki.</li>
+    </ol>
+
+    <h3 id="nd-krzaczki">Zamiast polskich liter są krzaczki</h3>
+    <ol>
+        <li>
+            Czy w <span class="kod">&lt;head&gt;</span> jest
+            <span class="kod">&lt;meta charset="UTF-8"&gt;</span>?
+        </li>
+        <li>
+            Czy plik jest zapisany w UTF-8? W Notatniku: <em>Plik → Zapisz jako</em>
+            i w polu <em>Kodowanie</em> wybierz <strong>UTF-8</strong>.
+            Samo dopisanie linijki nie wystarczy, jeśli plik zapisano inaczej.
+        </li>
+    </ol>
+
+    <h3 id="nd-link">Odnośnik nie działa albo pokazuje „Nie można odnaleźć pliku”</h3>
+    <ol>
+        <li>
+            Przy linku do swojej podstrony: czy nazwa w <span class="kod">href</span>
+            zgadza się co do litery z nazwą pliku i czy oba pliki leżą w tym samym folderze?
+        </li>
+        <li>
+            Przy linku do internetu: czy adres zaczyna się od <span class="kod">https://</span>?
+            Bez tego przeglądarka szuka pliku u Ciebie na dysku.
+        </li>
+        <li>Czy cudzysłowy są zwykłe, a nie „krzywe”?</li>
+        <li>Czy nie brakuje znacznika zamykającego <span class="kod">&lt;/a&gt;</span>?</li>
+    </ol>
+
+    <h3 id="nd-rozjezdza">Strona wygląda dziwnie od pewnego miejsca w dół</h3>
+    <ol>
+        <li>
+            To prawie zawsze <strong>niezamknięty znacznik</strong>. Zacznij szukać
+            dokładnie tam, gdzie zaczyna się bałagan, i idź w górę kodu.
+        </li>
+        <li>
+            Najczęściej brakuje <span class="kod">&lt;/ul&gt;</span>,
+            <span class="kod">&lt;/div&gt;</span> albo <span class="kod">&lt;/table&gt;</span>.
+        </li>
+        <li>
+            W tabeli sprawdź, czy każdy wiersz ma tyle samo komórek i czy każde
+            <span class="kod">&lt;tr&gt;</span> jest zamknięte.
+        </li>
+    </ol>
+
+    <h3 id="nd-nadal">Nadal nie działa</h3>
+    <ol>
+        <li>
+            Cofnij ostatnią zmianę (<strong>Ctrl + Z</strong>) i sprawdź, czy wróciło do działania -
+            tak najszybciej znajdziesz miejsce, które to popsuło.
+        </li>
+        <li>
+            Porównaj swój kod z przykładem na tej stronie: kliknij prawym przyciskiem
+            i wybierz <em>Pokaż źródło strony</em>.
+        </li>
+        <li>
+            Zapisz kopię pliku, zanim zaczniesz większe poprawki - wtedy zawsze masz
+            do czego wrócić.
+        </li>
+    </ol>
+
+    <h2 id="bledy">Błędy, które najłatwiej popełnić</h2>
     <ul>
         <li>
             <strong>Krzywe cudzysłowy.</strong> Jeśli skopiujecie kod z Worda albo z czatu,

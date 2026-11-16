@@ -26,10 +26,48 @@
         coś konkretnego poprawić.
     </p>
 
-    <!-- ============ WPROWADZENIE ============ -->
-    <h2>Zanim zaczniesz: jak to w ogóle działa?</h2>
+    <div class="ramka">
+        <p><strong>Na tej stronie:</strong></p>
+        <ul>
+            <li>
+                <a href="#zanim">Zanim zaczniesz: jak to w ogóle działa?</a>
+                <ul>
+                    <li><a href="#notatnik">Jak zacząć w Notatniku</a></li>
+                    <li><a href="#pulapka">Pułapka: plik, który udaje stronę</a></li>
+                    <li><a href="#folder">Jak ma wyglądać folder projektu</a></li>
+                    <li><a href="#szkielet">Szkielet strony</a></li>
+                    <li><a href="#budowa-znacznika">Z czego składa się znacznik?</a></li>
+                    <li><a href="#slowniczek">Słowniczek</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#znaczniki">Znaczniki HTML</a>
+                <ul>
+                    <li><a href="#znaczniki-1">Poziom 1: bez tych nie zrobisz strony</a></li>
+                    <li><a href="#znaczniki-2">Poziom 2: bardzo przydatne</a></li>
+                    <li><a href="#znaczniki-3">Poziom 3: dobrze wiedzieć, że istnieją</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#css">CSS - wygląd strony</a>
+                <ul>
+                    <li><a href="#css-podlaczenie">Jak podłączyć CSS?</a></li>
+                    <li><a href="#css-regula">Z czego składa się reguła CSS?</a></li>
+                    <li><a href="#css-selektory">Selektory</a></li>
+                    <li><a href="#css-1">Poziom 1: właściwości, od których zaczynasz</a></li>
+                    <li><a href="#css-2">Poziom 2: gdy strona ma wyglądać ładniej</a></li>
+                    <li><a href="#css-3">Poziom 3: dla chętnych</a></li>
+                </ul>
+            </li>
+            <li><a href="#kolory">Kolory i jednostki</a></li>
+            <li><a href="#kolejnosc">W jakiej kolejności to robić?</a></li>
+        </ul>
+    </div>
 
-    <h3>HTML to treść, CSS to wygląd</h3>
+    <!-- ============ WPROWADZENIE ============ -->
+    <h2 id="zanim">Zanim zaczniesz: jak to w ogóle działa?</h2>
+
+    <h3 id="html-css">HTML to treść, CSS to wygląd</h3>
     <p>
         <strong>HTML</strong> mówi, <em>co</em> jest na stronie: że tu jest nagłówek,
         tu akapit, a tu obrazek. <strong>CSS</strong> mówi, <em>jak</em> to ma wyglądać:
@@ -40,7 +78,7 @@
         nadal działa - jest tylko czarno-biała i brzydka. Strona bez HTML-a nie istnieje.
     </p>
 
-    <h3>Jak przeglądarka czyta Twoją stronę?</h3>
+    <h3 id="przegladarka">Jak przeglądarka czyta Twoją stronę?</h3>
     <p>
         Plik <span class="kod">.html</span> to zwykły tekst. Przeglądarka czyta go od góry
         do dołu i wszystko, co jest w <strong>ostrych nawiasach</strong>, traktuje jako
@@ -49,7 +87,7 @@
         <strong>Cześć</strong>, a nie jako „h1 Cześć h1”.
     </p>
 
-    <h3>Jak zacząć w Notatniku</h3>
+    <h3 id="notatnik">Jak zacząć w Notatniku</h3>
     <ol>
         <li>Otwórz Notatnik i wpisz szkielet strony (jest niżej).</li>
         <li>Wybierz <em>Plik &rarr; Zapisz jako</em>.</li>
@@ -63,7 +101,45 @@
         przechodzisz do przeglądarki i odświeżasz (<strong>F5</strong>). I tak w kółko.
     </p>
 
-    <h3>Szkielet strony - od tego zaczyna się każdy plik</h3>
+    <h3 id="pulapka">Uwaga na pułapkę: plik, który udaje stronę</h3>
+    <p>
+        Jeśli w okienku zapisu zapomnisz ustawić <em>Zapisz jako typ: Wszystkie pliki</em>,
+        Notatnik dopisze na końcu swoje własne rozszerzenie i zamiast
+        <span class="kod">index.html</span> zapisze <span class="kod">index.html.txt</span>.
+        Taki plik <strong>nie jest stroną</strong> - po kliknięciu znowu otworzy się Notatnik
+        zamiast przeglądarki.
+    </p>
+    <p>
+        <strong>Jak to sprawdzić i naprawić:</strong> w Eksploratorze plików wejdź w zakładkę
+        <em>Widok</em> i zaznacz <em>Rozszerzenia nazw plików</em>. Zobaczysz wtedy pełne nazwy.
+        Jeśli widzisz <span class="kod">index.html.txt</span>, zmień nazwę pliku (klawisz F2)
+        na <span class="kod">index.html</span> i potwierdź ostrzeżenie o zmianie rozszerzenia.
+    </p>
+
+    <h3 id="folder">Jak ma wyglądać folder projektu</h3>
+    <p>
+        Zrób <strong>jeden folder</strong> na cały projekt i trzymaj w nim wszystko.
+        Przeglądarka szuka plików względem tego miejsca, w którym leży strona - dlatego
+        porozrzucane pliki to najczęstsza przyczyna znikających obrazków.
+    </p>
+    <pre class="kod-blok">moj-projekt/
+    index.html          &lt;-- strona główna
+    planety.html        &lt;-- podstrona
+    style.css           &lt;-- wygląd obu stron
+    imgs/               &lt;-- folder na obrazki
+        mars.jpg
+        wykres.png
+    arkusz/             &lt;-- folder na arkusz
+        dane.xlsx</pre>
+    <p>
+        Taki układ znaczy, że w kodzie piszesz <span class="kod">src="imgs/mars.jpg"</span>
+        (czyli: wejdź do folderu <span class="kod">imgs</span>, weź plik
+        <span class="kod">mars.jpg</span>) oraz <span class="kod">href="planety.html"</span>
+        (czyli: plik leżący obok). Gdy będziesz oddawać projekt, spakujesz
+        <strong>cały ten folder</strong> - z podfolderami, bo bez nich obrazki znikną.
+    </p>
+
+    <h3 id="szkielet">Szkielet strony - od tego zaczyna się każdy plik</h3>
     <pre class="kod-blok">&lt;!DOCTYPE html&gt;
 &lt;html lang="pl"&gt;
 &lt;head&gt;
@@ -84,7 +160,7 @@
         wprowadzać zmiany samodzielnie.
     </p>
 
-    <h3>Z czego składa się znacznik?</h3>
+    <h3 id="budowa-znacznika">Z czego składa się znacznik?</h3>
     <pre class="kod-blok">&lt;a href="borsuk.html"&gt;Kliknij tutaj&lt;/a&gt;
  ^ ^                  ^            ^
  | |                  |            znacznik zamykający
@@ -106,10 +182,51 @@
         <span class="kod">&lt;p&gt;&lt;strong&gt;tekst&lt;/p&gt;&lt;/strong&gt;</span> - źle.
     </p>
 
-    <!-- ============ ZNACZNIKI HTML ============ -->
-    <h2>Znaczniki HTML</h2>
+    <h3 id="slowniczek">Słowniczek: słowa, które będą się powtarzać</h3>
+    <table class="sciaga">
+        <tr><th>Słowo</th><th>Co znaczy</th></tr>
+        <tr>
+            <td>rozszerzenie pliku</td>
+            <td>Końcówka nazwy po kropce: <span class="kod">.html</span>, <span class="kod">.css</span>, <span class="kod">.jpg</span>. Mówi komputerowi, jakiego rodzaju jest to plik.</td>
+        </tr>
+        <tr>
+            <td>ścieżka</td>
+            <td>Adres pliku zapisany tak, jak do niego dojść: <span class="kod">imgs/mars.jpg</span> znaczy „w folderze imgs, plik mars.jpg”.</td>
+        </tr>
+        <tr>
+            <td>znacznik</td>
+            <td>Polecenie w ostrych nawiasach, np. <span class="kod">&lt;p&gt;</span>. Mówi, czym jest dany kawałek strony.</td>
+        </tr>
+        <tr>
+            <td>atrybut</td>
+            <td>Dodatkowa informacja w środku znacznika, zawsze <span class="kod">nazwa="wartość"</span>, np. <span class="kod">src="mars.jpg"</span>.</td>
+        </tr>
+        <tr>
+            <td>klasa</td>
+            <td>Nazwa, którą sam nadajesz elementowi (<span class="kod">class="menu"</span>), żeby CSS wiedział, który to element.</td>
+        </tr>
+        <tr>
+            <td>selektor</td>
+            <td>Pierwsza część reguły CSS - mówi, na co ta reguła działa, np. <span class="kod">p</span> albo <span class="kod">.menu</span>.</td>
+        </tr>
+        <tr>
+            <td>kodowanie znaków</td>
+            <td>Sposób zapisu liter w pliku. UTF-8 to ten, który rozumie polskie ogonki.</td>
+        </tr>
+        <tr>
+            <td>domena publiczna</td>
+            <td>Zdjęcie albo tekst, z którego <strong>każdy może korzystać za darmo</strong>, też w szkolnym projekcie. Tak jest np. ze zdjęciami NASA. Autora i tak wypada podać.</td>
+        </tr>
+        <tr>
+            <td>licencja</td>
+            <td>Zasady, na jakich autor pozwala używać swojej pracy. <em>Creative Commons</em> to zestaw takich zasad - zwykle brzmią „używaj, ale podaj, kto to zrobił”.</td>
+        </tr>
+    </table>
 
-    <h3>Poziom 1: bez tych nie zrobisz strony</h3>
+    <!-- ============ ZNACZNIKI HTML ============ -->
+    <h2 id="znaczniki">Znaczniki HTML</h2>
+
+    <h3 id="znaczniki-1">Poziom 1: bez tych nie zrobisz strony</h3>
     <table class="sciaga">
         <tr><th>Znacznik</th><th>Co robi</th><th>Przykład</th></tr>
         <tr>
@@ -169,7 +286,7 @@
         </tr>
     </table>
 
-    <h3>Poziom 2: bardzo przydatne</h3>
+    <h3 id="znaczniki-2">Poziom 2: bardzo przydatne</h3>
     <table class="sciaga">
         <tr><th>Znacznik</th><th>Co robi</th><th>Przykład</th></tr>
         <tr>
@@ -219,7 +336,7 @@
         </tr>
     </table>
 
-    <h3>Poziom 3: dobrze wiedzieć, że istnieją</h3>
+    <h3 id="znaczniki-3">Poziom 3: dobrze wiedzieć, że istnieją</h3>
     <table class="sciaga">
         <tr><th>Znacznik</th><th>Co robi</th><th>Przykład</th></tr>
         <tr>
@@ -265,9 +382,9 @@
     </table>
 
     <!-- ============ CSS ============ -->
-    <h2>CSS - wygląd strony</h2>
+    <h2 id="css">CSS - wygląd strony</h2>
 
-    <h3>Jak podłączyć CSS?</h3>
+    <h3 id="css-podlaczenie">Jak podłączyć CSS?</h3>
     <p>
         Tworzysz drugi plik, np. <span class="kod">style.css</span>, w tym samym folderze
         co strona, i w sekcji <span class="kod">&lt;head&gt;</span> dopisujesz jedną linijkę:
@@ -279,7 +396,7 @@
         wpisywać style w każdym znaczniku z osobna.
     </p>
 
-    <h3>Z czego składa się reguła CSS?</h3>
+    <h3 id="css-regula">Z czego składa się reguła CSS?</h3>
     <pre class="kod-blok">h1 {
     color: #ffd34d;
     font-size: 34px;
@@ -294,7 +411,7 @@ selektor (na co to działa)</pre>
         reguła po prostu przestaje działać.
     </p>
 
-    <h3>Selektory, czyli „na co to działa”</h3>
+    <h3 id="css-selektory">Selektory, czyli „na co to działa”</h3>
     <table class="sciaga">
         <tr><th>Selektor</th><th>Na co działa</th><th>Przykład</th></tr>
         <tr>
@@ -319,7 +436,7 @@ selektor (na co to działa)</pre>
         </tr>
     </table>
 
-    <h3>Poziom 1: właściwości, od których zaczynasz</h3>
+    <h3 id="css-1">Poziom 1: właściwości, od których zaczynasz</h3>
     <table class="sciaga">
         <tr><th>Właściwość</th><th>Co robi</th><th>Przykład</th></tr>
         <tr>
@@ -369,12 +486,14 @@ selektor (na co to działa)</pre>
         </tr>
     </table>
     <p>
-        <strong>padding czy margin?</strong> Wyobraź sobie zdjęcie w ramce.
-        <span class="kod">padding</span> to biały passe-partout w środku ramki,
-        a <span class="kod">margin</span> to odstęp między ramką a sąsiednim obrazem na ścianie.
+        <strong>padding czy margin?</strong> Wyobraź sobie zdjęcie w ramce wiszące na ścianie.
+        <span class="kod">padding</span> to pusty biały pasek <strong>w środku ramki</strong>,
+        między zdjęciem a jej brzegiem. <span class="kod">margin</span> to odstęp
+        <strong>na zewnątrz</strong> - między tą ramką a następnym obrazkiem obok.
+        Krótko: padding odsuwa treść od brzegu, margin odsuwa cały element od sąsiadów.
     </p>
 
-    <h3>Poziom 2: gdy strona ma wyglądać ładniej</h3>
+    <h3 id="css-2">Poziom 2: gdy strona ma wyglądać ładniej</h3>
     <table class="sciaga">
         <tr><th>Właściwość</th><th>Co robi</th><th>Przykład</th></tr>
         <tr>
@@ -419,7 +538,7 @@ selektor (na co to działa)</pre>
         </tr>
     </table>
 
-    <h3>Poziom 3: dla chętnych</h3>
+    <h3 id="css-3">Poziom 3: dla chętnych</h3>
     <table class="sciaga">
         <tr><th>Właściwość</th><th>Co robi</th><th>Przykład</th></tr>
         <tr>
@@ -455,9 +574,9 @@ selektor (na co to działa)</pre>
     </table>
 
     <!-- ============ KOLORY I JEDNOSTKI ============ -->
-    <h2>Kolory i jednostki</h2>
+    <h2 id="kolory">Kolory i jednostki</h2>
 
-    <h3>Trzy sposoby zapisania koloru</h3>
+    <h3 id="kolory-zapis">Trzy sposoby zapisania koloru</h3>
     <table class="sciaga">
         <tr><th>Zapis</th><th>Jak działa</th><th>Przykład</th></tr>
         <tr>
@@ -481,7 +600,7 @@ selektor (na co to działa)</pre>
         graficznym - podają gotowy zapis z kratką do wklejenia.
     </p>
 
-    <h3>Jednostki</h3>
+    <h3 id="jednostki">Jednostki</h3>
     <table class="sciaga">
         <tr><th>Jednostka</th><th>Co oznacza</th><th>Kiedy używać</th></tr>
         <tr>
@@ -502,7 +621,7 @@ selektor (na co to działa)</pre>
     </table>
 
     <!-- ============ KOLEJNOSC PRAC ============ -->
-    <h2>W jakiej kolejności to robić?</h2>
+    <h2 id="kolejnosc">W jakiej kolejności to robić?</h2>
     <ol>
         <li>Wypisz na kartce, jakie części ma mieć Twoja strona.</li>
         <li>Zrób szkielet <span class="kod">index.html</span> i wpisz samą treść: nagłówki, akapity, listy. Na razie bez CSS-a - ma być brzydko, ale kompletnie.</li>
